@@ -12,7 +12,7 @@ if (isset($_GET['id'])) {
         $stmt_delete->execute();
 
         $count = $stmt_delete->rowCount();
-        $message = "商品を{$count}件削除しました。";
+        $message = "書籍を{$count}件削除しました。";
         header("Location: read.php?message={$message}");
     } catch (PDOException $e) {
         exit($e->getMessage());

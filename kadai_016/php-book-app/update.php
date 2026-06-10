@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
         $stmt_update->bindValue(':id', $_GET['id'], PDO::PARAM_INT);
         $stmt_update->execute();
         $count = $stmt_update->rowCount();
-        $message = "商品を{$count}件編集しました。";
+        $message = "書籍を{$count}件編集しました。";
         header("Location: read.php?message={$message}");
     } catch (PDOException $e) {
         exit($e->getMessage());
@@ -111,7 +111,7 @@ if (isset($_GET['id'])) {
                         ?>
                     </select>
                 </div>
-                <button type="submit" class="submit-btn" name="submit" value="update">登録</button>
+                <button type="submit" class="submit-btn" name="submit" value="update">更新</button>
             </form>
         </article>
     </main>
